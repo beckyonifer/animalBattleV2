@@ -13,12 +13,12 @@ Animal Battle is a simple Python project that simulates battles between differen
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/beckyvena815/AnimalBattleV2.git
+    git clone https://github.com/beckyvena815/animalBattleV2.git
     ```
 2. Navigate to the project directory:
 
     ```bash
-    cd AnimalBattle
+    cd animalBattleV2
     ```
 ## Usage
 To simulate a battle between characters, run the main.py script:
