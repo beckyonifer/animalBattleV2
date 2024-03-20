@@ -2,7 +2,7 @@ import attacks as a
 import characters as c
 
 
-def check_both_alive(char1: c.Cat, char2: c.Cat) -> tuple:
+def check_both_alive(char1: c.Character, char2: c.Character) -> tuple:
     dead_message = ""
     dead_characters = []
 
