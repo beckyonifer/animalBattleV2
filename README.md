@@ -2,6 +2,7 @@
 
 Animal Battle is a simple Python project that simulates battles between different types of animal characters.
 
+This project was created as part of the Coursera class [https://www.coursera.org/learn/object-oriented-programming-and-gui-with-python/](https://www.coursera.org/learn/object-oriented-programming-and-gui-with-python/)
 ## Table of Contents
 
 - [Installation](#installation)
