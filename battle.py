@@ -27,20 +27,17 @@ def check_both_alive(char1: c.Character, char2: c.Character) -> tuple:
     return both_alive, dead_message
 
 
-def battle(char1, char2) -> None:
+def battle(char1, char2) -> list:
     characters_alive = char1.is_alive() and char2.is_alive()
     fight_round = 1
     hits = 1
-
-    print("Initial character health")
-    print(char1.name, char1.health)
-    print(char2.name, char2.health)
+    results = [f"ANIMAL BATTLE!\n{char1.name} strength {char1.strength} VS. {char2.name} strength {char2.strength}"]
 
     while characters_alive:
         if not hits % 2 == 0:
             attacker = char1
             victim = char2
-            print("\nROUND ", fight_round)
+            results.append(f"\n\nROUND {fight_round}")
         else:
             attacker = char2
             victim = char1
@@ -48,8 +45,8 @@ def battle(char1, char2) -> None:
         round_attack = a.Attack(attacker, victim)
         round_hit = round_attack.hit()
         hits += 1
-        print("ATTACK: ", attacker.name, "attacks", victim.name, f"-{round_hit}")
-        print("health update: ", char1.name, char1.health, char2.name, char2.health)
+        results.append(f"\nATTACK: {attacker.name} attacks {victim.name}: -{round_hit}")
+        results.append(f"\nhealth update: {char1.name} {char1.health} | {char2.name} {char2.health}")
 
         # check alive after each fight_round
         check_alive = check_both_alive(char1, char2)
@@ -57,8 +54,9 @@ def battle(char1, char2) -> None:
             pass
         else:
             characters_alive = False
-            print("\nBATTLE OVER")
-            print(check_alive[1])
+            results.append(f"\n\nBATTLE OVER! {check_alive[1]} after {fight_round} rounds 😔\n\n")
 
         if hits % 2 == 0:
             fight_round += 1
+
+    return results
